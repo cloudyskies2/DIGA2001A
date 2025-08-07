@@ -6251,6 +6251,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ac2972d3-deca-4d17-9431-5421e1a4f7f1
     m_ActionName: 'Player/Shoot[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1026821371}
+        m_TargetAssemblyTypeName: FPController, Assembly-CSharp
+        m_MethodName: OnCrouch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5b681beb-b77b-454d-9742-e141be70f85d
+    m_ActionName: 'Player/Crouch[/Keyboard/ctrl]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -6276,6 +6292,9 @@ MonoBehaviour:
   verticalLookLimit: 90
   bulletPrefab: {fileID: 2614691587828112019, guid: 34a55f8e7df1e4b4387b141ccd353ed9, type: 3}
   gunPoint: {fileID: 1846663651}
+  crouchHeight: 1
+  standHeight: 2
+  crouchSpeed: 2.5
 --- !u!1 &1325611864
 GameObject:
   m_ObjectHideFlags: 0
