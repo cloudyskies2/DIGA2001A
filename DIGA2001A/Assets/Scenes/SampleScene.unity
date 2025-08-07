@@ -957,8 +957,8 @@ Transform:
   m_GameObject: {fileID: 341338746}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8272874, y: -4.692481, z: 4.185328}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.8273, y: -4.692481, z: 4.1853}
+  m_LocalScale: {x: 2.1056657, y: 1, z: 3.9751139}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -6148,6 +6148,8 @@ MonoBehaviour:
   cameraTransform: {fileID: 330585546}
   lookSensitivity: 0.5
   verticalLookLimit: 90
+  bulletPrefab: {fileID: 0}
+  gunPoint: {fileID: 0}
 --- !u!1 &1325611864
 GameObject:
   m_ObjectHideFlags: 0
