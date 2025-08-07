@@ -5,6 +5,8 @@ public class FPController : MonoBehaviour
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
     public float gravity = -9.81f;
+    public float jumpHeight = 1.5f;
+
     [Header("Look Settings")]
     public Transform cameraTransform;
     public float lookSensitivity = 2f;
@@ -14,6 +16,7 @@ public class FPController : MonoBehaviour
     private Vector2 lookInput;
     private Vector3 velocity;
     private float verticalRotation = 0f;
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -33,6 +36,15 @@ public class FPController : MonoBehaviour
     {
         lookInput = context.ReadValue<Vector2>();
     }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if(context.performed && controller.isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+    }
+
     public void HandleMovement()
     {
         Vector3 move = transform.right * moveInput.x + transform.forward *
