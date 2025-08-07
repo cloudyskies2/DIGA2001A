@@ -9,7 +9,7 @@ public class FPController : MonoBehaviour
 
     [Header("Look Settings")]
     public Transform cameraTransform;
-    public float lookSensitivity = 2f;
+    public float lookSensitivity = 1f;
     public float verticalLookLimit = 90f;
     private CharacterController controller;
     private Vector2 moveInput;
@@ -67,6 +67,7 @@ public class FPController : MonoBehaviour
             if (rb != null)
             {
                 rb.AddForce(gunPoint.forward * 1000f); //Adjust force value as needed
+                Destroy(bullet, 3); //Destroys bullet after 3 seconds
             }
         }
     }
