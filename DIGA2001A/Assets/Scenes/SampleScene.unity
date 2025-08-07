@@ -6129,7 +6129,7 @@ MonoBehaviour:
   moveSpeed: 5
   gravity: -9.81
   cameraTransform: {fileID: 330585546}
-  lookSensitivity: 2
+  lookSensitivity: 1
   verticalLookLimit: 90
 --- !u!1 &1325611864
 GameObject:
