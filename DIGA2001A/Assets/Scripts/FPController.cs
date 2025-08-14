@@ -27,6 +27,11 @@ public class FPController : MonoBehaviour
     public float crouchSpeed = 2.5f;
     private float originalMoveSpeed;
 
+    [Header("Pickup Settings")]
+    public float pickupRange = 3f;
+    public Transform heldPoint;
+    private PickUpObject heldObject;
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -39,6 +44,11 @@ public class FPController : MonoBehaviour
     {
         HandleMovement();
         HandleLook();
+
+        if(heldObject != null)
+        {
+            heldObject.MoveToHeldPoint(heldPoint.position);
+        }
     }
     public void OnMovement(InputAction.CallbackContext context)
     {
@@ -113,5 +123,31 @@ public class FPController : MonoBehaviour
         verticalLookLimit);
         cameraTransform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
+    }
+
+    public void OnPickUp(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+        
+        if(heldObject == null)
+        {
+            Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+
+            if(Physics.Raycast(ray, out RaycastHit hit, pickupRange))
+            {
+                PickUpObject pickUp = hit.collider.GetComponent<PickUpObject>();
+
+                if(pickUp != null)
+                {
+                    pickUp.PickUp(heldPoint);
+                    heldObject = pickUp;
+                }
+            }
+        }
+        else
+        {
+            heldObject.Drop();
+            heldObject = null;
+        }
     }
 }
