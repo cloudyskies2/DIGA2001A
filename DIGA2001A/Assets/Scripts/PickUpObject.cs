@@ -25,6 +25,15 @@ public class PickUpObject : MonoBehaviour
         transform.SetParent(null);
     }
 
+    public void Throw(Vector3 impulse)
+    {
+        transform.SetParent(null);
+        rb.useGravity = true;
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.AddForce(impulse, ForceMode.Impulse);
+    }
+
     public void MoveToHeldPoint(Vector3 targetPosition)
     {
         rb.MovePosition(targetPosition);
