@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class FPController : MonoBehaviour
@@ -5,7 +6,11 @@ public class FPController : MonoBehaviour
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
     public float gravity = -9.81f;
+
+    [Header("Jump Settings")]
     public float jumpHeight = 1.5f;
+    public float numOfJumps;
+    public float maxNumOfJumps = 2f;
 
     [Header("Look Settings")]
     public Transform cameraTransform;
@@ -65,10 +70,27 @@ public class FPController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
+        if (!context.performed) return;
+
         if(context.performed && controller.isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
+
+        if (!IsGrounded() && numOfJumps >= maxNumOfJumps) return;
+        if (numOfJumps == 0) StartCoroutine(routine: WaitForLanding());
+
+        numOfJumps++;
+    }
+
+    private bool IsGrounded() => controller.isGrounded;
+
+    private IEnumerator WaitForLanding()
+    {
+        yield return new WaitUntil(() => !IsGrounded());
+        yield return new WaitUntil(IsGrounded);
+
+        numOfJumps = 0;
     }
 
     public void OnShoot(InputAction.CallbackContext context)
@@ -153,6 +175,20 @@ public class FPController : MonoBehaviour
             heldObject.Drop();
             heldObject = null;
         }
+    }
+
+    public void OnRotateObjectYAxis(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+
+        heldObject.transform.Rotate(0, 45, 0);
+    }
+
+    public void OnRotateObjectXAxis(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+
+        heldObject.transform.Rotate(45, 0, 0);
     }
 
     public void OnThrow(InputAction.CallbackContext context)

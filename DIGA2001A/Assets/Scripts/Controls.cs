@@ -153,6 +153,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RotateObjectYAxis"",
+                    ""type"": ""Button"",
+                    ""id"": ""b3e83e0d-c760-4452-8491-9d331b1aefa4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RotateObjectXAxis"",
+                    ""type"": ""Button"",
+                    ""id"": ""93539b3d-ee10-43a5-b750-0b6cc6206089"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -452,6 +470,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Throw"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e9efffa0-c11b-4f58-a679-4896c886c6b9"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""RotateObjectYAxis"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a833ca0-d812-48d2-90be-e32d342d2c95"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""RotateObjectXAxis"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -495,6 +535,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_PickUp = m_Player.FindAction("PickUp", throwIfNotFound: true);
         m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
+        m_Player_RotateObjectYAxis = m_Player.FindAction("RotateObjectYAxis", throwIfNotFound: true);
+        m_Player_RotateObjectXAxis = m_Player.FindAction("RotateObjectXAxis", throwIfNotFound: true);
     }
 
     ~@Controls()
@@ -582,6 +624,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_PickUp;
     private readonly InputAction m_Player_Throw;
+    private readonly InputAction m_Player_RotateObjectYAxis;
+    private readonly InputAction m_Player_RotateObjectXAxis;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -621,6 +665,14 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Throw".
         /// </summary>
         public InputAction @Throw => m_Wrapper.m_Player_Throw;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/RotateObjectYAxis".
+        /// </summary>
+        public InputAction @RotateObjectYAxis => m_Wrapper.m_Player_RotateObjectYAxis;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/RotateObjectXAxis".
+        /// </summary>
+        public InputAction @RotateObjectXAxis => m_Wrapper.m_Player_RotateObjectXAxis;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -668,6 +720,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Throw.started += instance.OnThrow;
             @Throw.performed += instance.OnThrow;
             @Throw.canceled += instance.OnThrow;
+            @RotateObjectYAxis.started += instance.OnRotateObjectYAxis;
+            @RotateObjectYAxis.performed += instance.OnRotateObjectYAxis;
+            @RotateObjectYAxis.canceled += instance.OnRotateObjectYAxis;
+            @RotateObjectXAxis.started += instance.OnRotateObjectXAxis;
+            @RotateObjectXAxis.performed += instance.OnRotateObjectXAxis;
+            @RotateObjectXAxis.canceled += instance.OnRotateObjectXAxis;
         }
 
         /// <summary>
@@ -700,6 +758,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Throw.started -= instance.OnThrow;
             @Throw.performed -= instance.OnThrow;
             @Throw.canceled -= instance.OnThrow;
+            @RotateObjectYAxis.started -= instance.OnRotateObjectYAxis;
+            @RotateObjectYAxis.performed -= instance.OnRotateObjectYAxis;
+            @RotateObjectYAxis.canceled -= instance.OnRotateObjectYAxis;
+            @RotateObjectXAxis.started -= instance.OnRotateObjectXAxis;
+            @RotateObjectXAxis.performed -= instance.OnRotateObjectXAxis;
+            @RotateObjectXAxis.canceled -= instance.OnRotateObjectXAxis;
         }
 
         /// <summary>
@@ -815,5 +879,19 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnThrow(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "RotateObjectYAxis" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRotateObjectYAxis(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "RotateObjectXAxis" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRotateObjectXAxis(InputAction.CallbackContext context);
     }
 }
