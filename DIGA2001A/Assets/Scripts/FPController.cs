@@ -79,17 +79,18 @@ public class FPController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        //if(context.performed && IsGrounded())
-        {
-            if (!context.performed) return;
-            if (!IsGrounded() && numOfJumps >= maxNumOfJumps) return;
+        if (context.performed && !IsGrounded()) return;
+        if (!IsGrounded() && numOfJumps >= maxNumOfJumps) return;
+
+        //if (context.performed && IsGrounded())
+        //{
             if (numOfJumps == 0) StartCoroutine(routine:WaitForLanding());
 
             numOfJumps++;
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
             //HandleJump(jumpForce);
-        }
+        //}
 
         /*else if(context.performed && !controller.isGrounded && doubleJump)
         {
