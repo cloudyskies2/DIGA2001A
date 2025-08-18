@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class FPController : MonoBehaviour
@@ -5,7 +7,15 @@ public class FPController : MonoBehaviour
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
     public float gravity = -9.81f;
+
+    [Header("Jump Settings")]
     public float jumpHeight = 1.5f;
+    //public bool doubleJump;
+    public float jumpForce = 6f;
+    //public float doubleJumpForce = 8f;
+    //private Rigidbody rb;
+    public float numOfJumps;
+    public float maxNumOfJumps = 2f;
 
     [Header("Look Settings")]
     public Transform cameraTransform;
@@ -28,10 +38,13 @@ public class FPController : MonoBehaviour
     private float originalMoveSpeed;
 
     [Header("Pickup Settings")]
-    public float pickupRange = 3f;
+    public float pickupRange = 3.5f;
     public Transform heldPoint;
     private PickUpObject heldObject;
     [SerializeField] private LayerMask pickUpLayer;
+
+    [Header("Rotation Settings")]
+    //Quaternion targetRotation;
 
     [Header("Throw Settings")]
     public float throwForce = 10f;
@@ -66,11 +79,53 @@ public class FPController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if(context.performed && controller.isGrounded)
+        //if(context.performed && IsGrounded())
         {
+            if (!context.performed) return;
+            if (!IsGrounded() && numOfJumps >= maxNumOfJumps) return;
+            if (numOfJumps == 0) StartCoroutine(routine:WaitForLanding());
+
+            numOfJumps++;
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+
+            //HandleJump(jumpForce);
         }
+
+        /*else if(context.performed && !controller.isGrounded && doubleJump)
+        {
+            HandleJump(doubleJumpForce);
+            doubleJump = false;
+        }*/
+
+        //if (!context.performed) return;
+        //if (!IsGrounded() && numOfJumps >= maxNumOfJumps) return;
+        //if(numOfJumps == 0) StartCoroutine(WaitForLanding());
+
+        //numOfJumps++;
+        //velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
     }
+
+    private bool IsGrounded() => controller.isGrounded;
+
+    private IEnumerator WaitForLanding()
+    {
+        yield return new WaitUntil(() => !IsGrounded());
+        yield return new WaitUntil(IsGrounded);
+
+        numOfJumps = 0;
+    }
+
+    /*private bool GetIsGrounded()
+    {
+        bool hit = Physics.Raycast(transform.position, Vector3.down, jumpHeight);
+
+        if (hit)
+        {
+            doubleJump = true;
+        }
+
+        return hit;
+    }*/
 
     public void OnShoot(InputAction.CallbackContext context)
     {
@@ -130,6 +185,12 @@ public class FPController : MonoBehaviour
         transform.Rotate(Vector3.up * mouseX);
     }
 
+    public void HandleJump()
+    {
+
+        //rb.AddForce(Vector3.up * force, ForceMode.Impulse);
+    }
+
     public void OnPickUp(InputAction.CallbackContext context)
     {
         if (!context.performed) return;
@@ -138,7 +199,7 @@ public class FPController : MonoBehaviour
         {
             Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
 
-            if(Physics.Raycast(ray, out RaycastHit hit, pickupRange, pickUpLayer))
+            if (Physics.Raycast(ray, out RaycastHit hit, pickupRange, pickUpLayer)) 
             {
                 PickUpObject pickUp = hit.collider.GetComponent<PickUpObject>();
 
@@ -156,12 +217,23 @@ public class FPController : MonoBehaviour
         }
     }
 
-    public void OnRotateObject(InputAction.CallbackContext context)
+    public void OnRotateObjectYAxis(InputAction.CallbackContext context)
     {
         if (!context.performed) return;
 
-        heldObject.transform.Rotate(10, 15, 20);
+        heldObject.transform.Rotate(0, 45, 0);
+        //targetRotation = Quaternion.Euler(heldObject.transform.eulerAngles.x, heldObject.transform.eulerAngles.y + 90, heldObject.transform.eulerAngles.z);
     }
+
+    public void OnRotateObjectXAxis(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+
+        heldObject.transform.Rotate(45, 0, 0);
+        //targetRotation = Quaternion.Euler(heldObject.transform.eulerAngles.x, heldObject.transform.eulerAngles.y + 90, heldObject.transform.eulerAngles.z);
+    }
+
+
 
     public void OnThrow(InputAction.CallbackContext context)
     {

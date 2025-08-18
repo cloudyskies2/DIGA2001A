@@ -69,9 +69,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "RotateObject",
+                    "name": "RotateObjectYAxis",
                     "type": "Button",
-                    "id": "2c0b4849-022f-49cd-bdd7-94b6b98e72ea",
+                    "id": "ba3aa003-9cf3-49de-8d4f-661fbfb6a00a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RotateObjectXAxis",
+                    "type": "Button",
+                    "id": "d24d143b-5472-4d90-8969-1d2f8dfefde7",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -378,12 +387,23 @@
                 },
                 {
                     "name": "",
-                    "id": "6ce0c31a-db7b-423f-85c2-2a461a781f97",
+                    "id": "161cd158-0096-482b-9159-9150dd458485",
                     "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
-                    "action": "RotateObject",
+                    "action": "RotateObjectYAxis",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0bb31984-4c45-47ca-8d42-6192ba057c04",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "RotateObjectXAxis",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

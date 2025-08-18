@@ -6230,7 +6230,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!135 &952277600
 SphereCollider:
@@ -6589,7 +6589,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1026821371}
         m_TargetAssemblyTypeName: FPController, Assembly-CSharp
-        m_MethodName: OnRotateObject
+        m_MethodName: OnRotateObjectYAxis
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6599,8 +6599,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 2c0b4849-022f-49cd-bdd7-94b6b98e72ea
-    m_ActionName: 'Player/RotateObject[/Keyboard/r]'
+    m_ActionId: ba3aa003-9cf3-49de-8d4f-661fbfb6a00a
+    m_ActionName: 'Player/RotateObjectYAxis[/Keyboard/r]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1026821371}
+        m_TargetAssemblyTypeName: FPController, Assembly-CSharp
+        m_MethodName: OnRotateObjectXAxis
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d24d143b-5472-4d90-8969-1d2f8dfefde7
+    m_ActionName: 'Player/RotateObjectXAxis[/Keyboard/t]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -8451,7 +8467,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!43 &2074660637
 Mesh:
