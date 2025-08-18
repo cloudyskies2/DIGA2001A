@@ -1,8 +1,14 @@
+using System.Net;
+using System.Threading;
 using UnityEngine;
 
 public class PickUpObject : MonoBehaviour
 {
     private Rigidbody rb;
+    private float lerpSpeed = 10f;
+    private Transform heldPoint;
+    private Transform From;
+    private Transform To;
 
     public void Awake()
     {
@@ -17,6 +23,11 @@ public class PickUpObject : MonoBehaviour
 
         transform.SetParent(heldPoint);
         transform.localPosition = Vector3.zero;
+    }
+
+    public void RotateObject()
+    {
+        transform.rotation = Quaternion.Lerp(From.rotation, To.rotation, Time.deltaTime * lerpSpeed);
     }
 
     public void Drop()
@@ -37,5 +48,14 @@ public class PickUpObject : MonoBehaviour
     public void MoveToHeldPoint(Vector3 targetPosition)
     {
         rb.MovePosition(targetPosition);
+    }
+
+    private void FixedUpdate()
+    {
+        if (heldPoint != null)
+        {
+            Vector3 newPosition = Vector3.Lerp(transform.position, heldPoint.position, Time.deltaTime * lerpSpeed);
+            RotateObject();
+        }
     }
 }
