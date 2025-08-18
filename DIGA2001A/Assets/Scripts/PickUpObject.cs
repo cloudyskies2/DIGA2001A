@@ -2,6 +2,13 @@ using UnityEngine;
 
 public class PickUpObject : MonoBehaviour
 {
+    /*
+    Title: Easy Object Rotation in Unity with C# in 5 Minutes
+    Author: Bonane
+    Date: 15 August 2025
+    Code version: N/A
+    Availability: https://www.youtube.com/watch?v=4ApRQRMXVFk
+    */
     private Rigidbody rb;
     private float lerpSpeed = 10f;
     private Transform heldPoint;

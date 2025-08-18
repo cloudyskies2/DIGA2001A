@@ -14,7 +14,7 @@ public class FPController : MonoBehaviour
 
     [Header("Look Settings")]
     public Transform cameraTransform;
-    public float lookSensitivity = 1f;
+    public float lookSensitivity = 0.8f;
     public float verticalLookLimit = 90f;
     private CharacterController controller;
     private Vector2 moveInput;
@@ -22,9 +22,9 @@ public class FPController : MonoBehaviour
     private Vector3 velocity;
     private float verticalRotation = 0f;
 
-    [Header("Shooting")]
-    public GameObject bulletPrefab;
-    public Transform gunPoint;
+    //[Header("Shooting")]
+    //public GameObject bulletPrefab;
+    //public Transform gunPoint;
 
     [Header("Crouch Settings")]
     public float crouchHeight = 1f;
@@ -33,7 +33,7 @@ public class FPController : MonoBehaviour
     private float originalMoveSpeed;
 
     [Header("Pickup Settings")]
-    public float pickupRange = 3f;
+    public float pickupRange = 3.5f;
     public Transform heldPoint;
     private PickUpObject heldObject;
 
@@ -68,18 +68,26 @@ public class FPController : MonoBehaviour
         lookInput = context.ReadValue<Vector2>();
     }
 
+    /*
+    Title: Double Jumping | Simple Character Controller in Unity | Part 6
+    Author: chonk
+    Date: 14 August 2025
+    Code version: Unity 2021.3.9f1
+    Availability: https://www.youtube.com/watch?v=I9yrjm6w0SM&t=28s
+    */
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (!context.performed) return;
-
-        if(context.performed && controller.isGrounded)
+        /*if(context.performed && controller.isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
+        }*/
 
+        if (context.performed && !IsGrounded()) return;
         if (!IsGrounded() && numOfJumps >= maxNumOfJumps) return;
+
         if (numOfJumps == 0) StartCoroutine(routine: WaitForLanding());
 
+        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         numOfJumps++;
     }
 
@@ -93,7 +101,7 @@ public class FPController : MonoBehaviour
         numOfJumps = 0;
     }
 
-    public void OnShoot(InputAction.CallbackContext context)
+    /*public void OnShoot(InputAction.CallbackContext context)
     {
         if(context.performed)
         {
@@ -114,7 +122,7 @@ public class FPController : MonoBehaviour
                 Destroy(bullet, 3); //Destroys bullet after 3 seconds
             }
         }
-    }
+    }*/
 
     public void OnCrouch(InputAction.CallbackContext context)
     {
