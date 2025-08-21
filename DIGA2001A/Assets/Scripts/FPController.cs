@@ -50,6 +50,9 @@ public class FPController : MonoBehaviour
     public float throwForce = 10f;
     public float throwUpwardBoost = 1f;
 
+    [Header("Interact Settings")]
+    public float interactRange = 3f;
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -234,8 +237,6 @@ public class FPController : MonoBehaviour
         //targetRotation = Quaternion.Euler(heldObject.transform.eulerAngles.x, heldObject.transform.eulerAngles.y + 90, heldObject.transform.eulerAngles.z);
     }
 
-
-
     public void OnThrow(InputAction.CallbackContext context)
     {
         if (!context.performed) return;
@@ -246,5 +247,24 @@ public class FPController : MonoBehaviour
 
         heldObject.Throw(impulse);
         heldObject = null;
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+
+        Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+        if(Physics.Raycast(ray, out RaycastHit hit, interactRange))
+        {
+            //Only allow objects tagged as "Switchable".
+            if(hit.collider.CompareTag("Switchable"))
+            {
+                var switcher = hit.collider.GetComponent<MaterialSwitcher>();
+                if(switcher != null)
+                {
+                    switcher.ToggleMaterial();
+                }
+            }
+        }
     }
 }
