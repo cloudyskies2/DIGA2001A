@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Shoot",
+                    "name": "PuzzleMove",
                     "type": "Button",
                     "id": "ac2972d3-deca-4d17-9431-5421e1a4f7f1",
                     "expectedControlType": "",
@@ -313,7 +313,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
-                    "action": "Shoot",
+                    "action": "PuzzleMove",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -324,7 +324,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Shoot",
+                    "action": "PuzzleMove",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

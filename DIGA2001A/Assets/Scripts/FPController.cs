@@ -9,9 +9,9 @@ public class FPController : MonoBehaviour
     public float gravity = -9.81f;
 
     [Header("Jump Settings")]
-    public float jumpHeight = 1.5f;
+    public float jumpHeight = 16f;
     //public bool doubleJump;
-    public float jumpForce = 6f;
+    public float jumpForce = 9f;
     //public float doubleJumpForce = 8f;
     //private Rigidbody rb;
     public float numOfJumps;
@@ -27,9 +27,9 @@ public class FPController : MonoBehaviour
     private Vector3 velocity;
     private float verticalRotation = 0f;
 
-    [Header("Shooting")]
-    public GameObject bulletPrefab;
-    public Transform gunPoint;
+    //[Header("Shooting")]
+    //public GameObject bulletPrefab;
+    //public Transform gunPoint;
 
     [Header("Crouch Settings")]
     public float crouchHeight = 1f;
@@ -90,7 +90,7 @@ public class FPController : MonoBehaviour
             if (numOfJumps == 0) StartCoroutine(routine:WaitForLanding());
 
             numOfJumps++;
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            velocity.y = Mathf.Sqrt(jumpHeight * -5f * gravity);
 
             //HandleJump(jumpForce);
         //}
@@ -131,7 +131,7 @@ public class FPController : MonoBehaviour
         return hit;
     }*/
 
-    public void OnShoot(InputAction.CallbackContext context)
+    /*public void OnShoot(InputAction.CallbackContext context)
     {
         if(context.performed)
         {
@@ -152,7 +152,7 @@ public class FPController : MonoBehaviour
                 Destroy(bullet, 3); //Destroys bullet after 3 seconds
             }
         }
-    }
+    }*/
 
     public void OnCrouch(InputAction.CallbackContext context)
     {
@@ -167,6 +167,8 @@ public class FPController : MonoBehaviour
             moveSpeed = originalMoveSpeed;
         }
     }
+
+   
 
     public void HandleMovement()
     {
