@@ -87,7 +87,7 @@ public class FPController : MonoBehaviour
 
         if (numOfJumps == 0) StartCoroutine(routine: WaitForLanding());
 
-        velocity.y = Mathf.Sqrt(jumpHeight * -7f * gravity);
+        velocity.y = Mathf.Sqrt(jumpHeight * -5f * gravity);
         numOfJumps++;
     }
 
