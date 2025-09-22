@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - PickUp
+  - InvisibleWall
+  - Pillar
+  - Pillar2
+  - Pillar3
   layers:
   - Default
   - TransparentFX
