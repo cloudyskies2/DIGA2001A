@@ -2,6 +2,12 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 
+//Title:5 Minute DIALOGUE SYSTEM in UNITY Tutorial
+//Author: BMo
+//Date: 19 march 2021
+//Code version;n/a
+//Availability; https://youtu.be/8oTYabhj248?si=xYuGupBwO3Anu36W
+
 public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
