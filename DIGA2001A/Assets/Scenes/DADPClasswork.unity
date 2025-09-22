@@ -6835,7 +6835,6 @@ MonoBehaviour:
   moveSpeed: 5
   gravity: -9.81
   jumpHeight: 1.5
-  jumpForce: 6
   numOfJumps: 0
   maxNumOfJumps: 2
   cameraTransform: {fileID: 957527899}
@@ -6846,12 +6845,8 @@ MonoBehaviour:
   crouchSpeed: 2.5
   pickupRange: 3
   heldPoint: {fileID: 551075166}
-  pickUpLayer:
-    serializedVersion: 2
-    m_Bits: 55
   throwForce: 10
   throwUpwardBoost: 1
-  interactRange: 3
 --- !u!143 &699847178
 CharacterController:
   m_ObjectHideFlags: 0
@@ -8580,6 +8575,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameTransform: {fileID: 7867871}
   piecePrefab: {fileID: 2270928737160480909, guid: b301585ad4815be4293e77fdce89f42d, type: 3}
+  pieces: []
+  emptyLocation: 0
+  size: 0
+  shuffling: 0
 --- !u!4 &875775102
 Transform:
   m_ObjectHideFlags: 0
@@ -13820,6 +13819,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alternateMaterial: {fileID: 2100000, guid: fec366abe981f624d9d4a49a10d908fb, type: 2}
+  rend: {fileID: 0}
+  originalMaterial: {fileID: 0}
+  usingAlternate: 0
 --- !u!1 &1921804367
 GameObject:
   m_ObjectHideFlags: 0
