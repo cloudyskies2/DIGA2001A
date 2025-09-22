@@ -10289,6 +10289,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 960cb35820c2ac14aa601575b838115c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1f1d1964340d89f42b2596cb2c275ba0, type: 2}
     - target: {fileID: 919132149155446097, guid: 960cb35820c2ac14aa601575b838115c, type: 3}
       propertyPath: m_Name
       value: GD Table
@@ -18748,6 +18752,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: bdf4cf3d2aefd654991981e5f285cfd7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a9ffa16edc2b0e4a8e1c600802bdb6b, type: 2}
     - target: {fileID: 919132149155446097, guid: bdf4cf3d2aefd654991981e5f285cfd7, type: 3}
       propertyPath: m_Name
       value: GD Counter 1 (1)
@@ -22882,6 +22890,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: bdf4cf3d2aefd654991981e5f285cfd7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a9ffa16edc2b0e4a8e1c600802bdb6b, type: 2}
     - target: {fileID: 919132149155446097, guid: bdf4cf3d2aefd654991981e5f285cfd7, type: 3}
       propertyPath: m_Name
       value: GD Counter 1
@@ -23284,6 +23296,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: bdf4cf3d2aefd654991981e5f285cfd7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a9ffa16edc2b0e4a8e1c600802bdb6b, type: 2}
     - target: {fileID: 919132149155446097, guid: bdf4cf3d2aefd654991981e5f285cfd7, type: 3}
       propertyPath: m_Name
       value: GD Counter 1 (2)
@@ -26282,7 +26298,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: d70147671f7e6314885f91f56fe8eb62, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: e2b4e56eb00458d41acf1a7a3dd0efd4, type: 2}
+      objectReference: {fileID: 2100000, guid: 104434c6a2c6a3c44bdad01a14d62dcd, type: 2}
     - target: {fileID: 919132149155446097, guid: d70147671f7e6314885f91f56fe8eb62, type: 3}
       propertyPath: m_Name
       value: GD Microwave
@@ -27113,6 +27129,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ffd00284c6548c444aba95173b6068ac, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3b5313d7210c66e46851149267913a9f, type: 2}
     - target: {fileID: 919132149155446097, guid: ffd00284c6548c444aba95173b6068ac, type: 3}
       propertyPath: m_Name
       value: GD Top Cabinet
@@ -33994,6 +34014,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ffd00284c6548c444aba95173b6068ac, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3b5313d7210c66e46851149267913a9f, type: 2}
     - target: {fileID: 919132149155446097, guid: ffd00284c6548c444aba95173b6068ac, type: 3}
       propertyPath: m_Name
       value: GD Top Cabinet (1)
@@ -47258,6 +47282,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4a9f971afe4240e418f538394ea28c64, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6f42fe5087814e646b9d526ec3e3b19b, type: 2}
     - target: {fileID: 919132149155446097, guid: 4a9f971afe4240e418f538394ea28c64, type: 3}
       propertyPath: m_Name
       value: GD Chair
@@ -47391,6 +47419,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GD Fridge
       objectReference: {fileID: 0}
+    - target: {fileID: 8193678948593124326, guid: 04b30bff4310b7a40895593674d8862b, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193678948593124326, guid: 04b30bff4310b7a40895593674d8862b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 30f26fea393b8e345b34138e4d9b02d4, type: 2}
+    - target: {fileID: 8193678948593124326, guid: 04b30bff4310b7a40895593674d8862b, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 316c52087a3ee8a4cb6502177745a18c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -47407,6 +47447,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 771702792998366668, guid: 78ca36b7042f0db46907056157f15c1d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e0e855bbe68d7e84cb81f3fa679fdf73, type: 2}
     - target: {fileID: 1276031528970193945, guid: 78ca36b7042f0db46907056157f15c1d, type: 3}
       propertyPath: m_Name
       value: GD Oven
@@ -47511,6 +47555,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GD Pantry
       objectReference: {fileID: 0}
+    - target: {fileID: 8259167692593888941, guid: a0213b9a01582d6478b1c90cfed69bea, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ed4aaff028681434e874eb76a13181d0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
