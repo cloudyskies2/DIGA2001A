@@ -9,6 +9,7 @@ TagManager:
   - Pillar
   - Pillar2
   - Pillar3
+  - Stairs
   layers:
   - Default
   - TransparentFX
