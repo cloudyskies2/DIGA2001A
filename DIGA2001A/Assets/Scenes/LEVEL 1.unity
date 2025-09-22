@@ -21439,6 +21439,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1103536866254402842, guid: 7ca2f2ebf00f4ab4b927225086152781, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 83ed918a5094ac94ebffceea9a0f6f91, type: 2}
     - target: {fileID: 1463793706745959631, guid: 7ca2f2ebf00f4ab4b927225086152781, type: 3}
       propertyPath: m_Name
       value: GD Pillar (2)
@@ -23024,6 +23028,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1103536866254402842, guid: 7ca2f2ebf00f4ab4b927225086152781, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 83ed918a5094ac94ebffceea9a0f6f91, type: 2}
     - target: {fileID: 1463793706745959631, guid: 7ca2f2ebf00f4ab4b927225086152781, type: 3}
       propertyPath: m_Name
       value: GD Pillar (1)
@@ -26262,6 +26270,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1103536866254402842, guid: 7ca2f2ebf00f4ab4b927225086152781, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 83ed918a5094ac94ebffceea9a0f6f91, type: 2}
     - target: {fileID: 1463793706745959631, guid: 7ca2f2ebf00f4ab4b927225086152781, type: 3}
       propertyPath: m_Name
       value: GD Pillar
