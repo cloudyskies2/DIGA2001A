@@ -1,19 +1,14 @@
+using System.Net;
+using System.Threading;
 using UnityEngine;
 
 public class PickUpObject : MonoBehaviour
 {
-    /*
-    Title: Easy Object Rotation in Unity with C# in 5 Minutes
-    Author: Bonane
-    Date: 15 August 2025
-    Code version: N/A
-    Availability: https://www.youtube.com/watch?v=4ApRQRMXVFk
-    */
     private Rigidbody rb;
     private float lerpSpeed = 10f;
     private Transform heldPoint;
-    private Transform from;
-    private Transform to;
+    private Transform From;
+    private Transform To;
     Quaternion targetRotation;
     private GameObject heldObject;
 
@@ -34,8 +29,11 @@ public class PickUpObject : MonoBehaviour
 
     public void RotateObject()
     {
-        transform.rotation = Quaternion.Lerp(from.rotation, to.rotation, Time.deltaTime * lerpSpeed);
+        transform.rotation = Quaternion.Lerp(From.rotation, To.rotation, Time.deltaTime * lerpSpeed);
+
+        //heldObject.transform.rotation = targetRotation;
     }
+
 
     public void Drop()
     {
@@ -59,9 +57,10 @@ public class PickUpObject : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(heldPoint != null)
+        if (heldPoint != null)
         {
             Vector3 newPosition = Vector3.Lerp(transform.position, heldPoint.position, Time.deltaTime * lerpSpeed);
+            //RotateObject();
         }
     }
 }
