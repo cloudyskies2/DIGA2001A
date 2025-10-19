@@ -4704,11 +4704,11 @@ Transform:
   m_GameObject: {fileID: 484822104}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -207.75002, y: -236.125, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 929205919}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &500733333 stripped
 GameObject:
@@ -12361,7 +12361,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1913050184}
-  - {fileID: 484822107}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -13765,6 +13764,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactKey: 113
   interactionPrompt: {fileID: 1913050185}
+--- !u!65 &1027287219
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027287214}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.9852874, y: 10.777292, z: 3.9852874}
+  m_Center: {x: 0, y: -5.1446276, z: 0}
 --- !u!1 &1054246368
 GameObject:
   m_ObjectHideFlags: 0
@@ -23865,6 +23885,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1463793706745959631, guid: 7ca2f2ebf00f4ab4b927225086152781, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1027287218}
+    - targetCorrespondingSourceObject: {fileID: 1463793706745959631, guid: 7ca2f2ebf00f4ab4b927225086152781, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1027287219}
   m_SourcePrefab: {fileID: 100100000, guid: 7ca2f2ebf00f4ab4b927225086152781, type: 3}
 --- !u!43 &2071177663
 Mesh:
@@ -27367,4 +27390,5 @@ SceneRoots:
   - {fileID: 1216813099}
   - {fileID: 1095764195}
   - {fileID: 1291524626}
+  - {fileID: 484822107}
   - {fileID: 929205919}
