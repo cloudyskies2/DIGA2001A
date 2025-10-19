@@ -1,2 +1,12 @@
 fileFormatVersion: 2
 guid: b37f4273442e10a4cb1a982c4ac9efe2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - puzzle: {fileID: 3395664826126780061, guid: d16035c422ccb0047a5d6634633f365e, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

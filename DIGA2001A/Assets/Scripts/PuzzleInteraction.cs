@@ -22,7 +22,6 @@ public class PuzzleInteraction : MonoBehaviour
     {
         if (isPlayerInRange)
         {
-
             if (interactionPrompt != null)
             {
                 interactionPrompt.text = isPuzzleActivated ? "Press 'Q' to open the puzzle" : "Press 'Q' to close the puzzle";
