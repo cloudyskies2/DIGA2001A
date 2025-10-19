@@ -4703,12 +4703,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484822104}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -207.75002, y: -236.125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 929205919}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &500733333 stripped
 GameObject:
@@ -12361,6 +12361,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1913050184}
+  - {fileID: 484822107}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -13745,6 +13746,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneBuildIndex: 2
+--- !u!1 &1027287214 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1463793706745959631, guid: 7ca2f2ebf00f4ab4b927225086152781, type: 3}
+  m_PrefabInstance: {fileID: 2054159152}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1027287218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027287214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2c8f4b1c2406d40b31529dbb7daff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactKey: 113
+  interactionPrompt: {fileID: 1913050185}
 --- !u!1 &1054246368
 GameObject:
   m_ObjectHideFlags: 0
@@ -15191,6 +15211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1291524626}
   - component: {fileID: 1291524625}
+  - component: {fileID: 1291524627}
   m_Layer: 0
   m_Name: PuzzleManager
   m_TagString: Untagged
@@ -15221,12 +15242,26 @@ Transform:
   m_GameObject: {fileID: 1291524624}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.92907715, y: 1.5388336, z: 42.244}
+  m_LocalPosition: {x: -1.83, y: -3.8, z: 47.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1291524627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291524624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2c8f4b1c2406d40b31529dbb7daff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactKey: 113
+  interactionPrompt: {fileID: 1913050185}
 --- !u!1 &1317324908
 GameObject:
   m_ObjectHideFlags: 0
@@ -22236,7 +22271,7 @@ GameObject:
   - component: {fileID: 1913050186}
   - component: {fileID: 1913050185}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PuzzleOpenPrompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23826,7 +23861,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1463793706745959631, guid: 7ca2f2ebf00f4ab4b927225086152781, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1027287218}
   m_SourcePrefab: {fileID: 100100000, guid: 7ca2f2ebf00f4ab4b927225086152781, type: 3}
 --- !u!43 &2071177663
 Mesh:
@@ -27282,7 +27320,6 @@ SceneRoots:
   - {fileID: 1484915611}
   - {fileID: 719358360}
   - {fileID: 408224206}
-  - {fileID: 484822107}
   - {fileID: 694577389}
   - {fileID: 1196314399}
   - {fileID: 1915798144}

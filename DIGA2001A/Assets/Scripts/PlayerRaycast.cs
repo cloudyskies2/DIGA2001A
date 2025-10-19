@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerRaycast : MonoBehaviour
 {
     public GameObject puzzle;
-    public float interactionDistance;
+    public float interactionDistance = 2;
     public LayerMask layers;
 
      void Update()
