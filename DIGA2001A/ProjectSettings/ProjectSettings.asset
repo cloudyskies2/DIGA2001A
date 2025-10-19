@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: DIGA2001A
-  defaultCursor: {fileID: 2800000, guid: 93ad6f8e5a57cac4c956f1a18faa86f0, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 20b888a417ef79e4ebc76cbc998f9052, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1

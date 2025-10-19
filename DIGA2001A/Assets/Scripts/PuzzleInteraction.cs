@@ -24,7 +24,8 @@ public class PuzzleInteraction : MonoBehaviour
         {
             if (interactionPrompt != null)
             {
-                interactionPrompt.text = isPuzzleActivated ? "Press 'Q' to open the puzzle" : "Press 'Q' to close the puzzle";
+                interactionPrompt.text = isPuzzleActivated ? "Congragulations on completing the puzzle!" +
+                    "Press 'Q' to close the puzzle" : "Press 'Q' to open the puzzle";
                 interactionPrompt.gameObject.SetActive(true);
             }
 
@@ -41,10 +42,11 @@ public class PuzzleInteraction : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = true;
+            interactionPrompt.text = isPuzzleActivated ? "Press 'Q' to open the puzzle" : "Press 'Q' to close the puzzle";
+            interactionPrompt.gameObject.SetActive(true);
         }
     }
 

@@ -14,8 +14,6 @@ public class DoorInteraction : MonoBehaviour
 
      void Start()
     {
-
-
         if (interactionPrompt != null)
         {
             interactionPrompt.gameObject.SetActive(false);
