@@ -14426,6 +14426,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 175fcbe0fc84cde4684211843c07a562, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 77334955cdbfaf14984f303e778e1038, type: 2}
     - target: {fileID: 919132149155446097, guid: 175fcbe0fc84cde4684211843c07a562, type: 3}
       propertyPath: m_Name
       value: scratchpole
@@ -15410,7 +15414,7 @@ Animator:
   m_GameObject: {fileID: 1317324908}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f00a5e7d8ddd70c4eb4518cc66116eb6, type: 2}
+  m_Controller: {fileID: 9100000, guid: dd8cba1b0d8faef498179adc1c59b1e6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -18898,7 +18902,6 @@ GameObject:
   - component: {fileID: 1484915608}
   - component: {fileID: 1484915607}
   - component: {fileID: 1484915606}
-  - component: {fileID: 1484915612}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -18918,21 +18921,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cdfe6b22a1f2324cba65a49969e8a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  gravity: -9.81
-  jumpHeight: 1.5
-  numOfJumps: 0
-  maxNumOfJumps: 2
-  cameraTransform: {fileID: 439851809}
-  lookSensitivity: 0.5
-  verticalLookLimit: 90
-  crouchHeight: 1
-  standHeight: 2
-  crouchSpeed: 2.5
-  pickupRange: 3
-  heldPoint: {fileID: 719107287}
-  throwForce: 10
-  throwUpwardBoost: 1
 --- !u!143 &1484915607
 CharacterController:
   m_ObjectHideFlags: 0
@@ -19201,18 +19189,6 @@ Transform:
   - {fileID: 439851809}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1484915612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1484915605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e248402073a642944add33851b1743fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1521245649
 GameObject:
   m_ObjectHideFlags: 0
