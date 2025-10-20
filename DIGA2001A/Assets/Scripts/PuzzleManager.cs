@@ -5,6 +5,12 @@ using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+/// Title: Let's Create: A sliding puzzle game in Unity
+/// Author: Firnox
+/// Date: 02 August 2022
+/// Code version: Unity 2021.3.6f1
+/// Availabiliy:https://www.youtube.com/watch?v=IgBjJ-bexeo
+/// 
 public class PuzzleManager : MonoBehaviour
 {
     [SerializeField] private Transform gameTransform;
