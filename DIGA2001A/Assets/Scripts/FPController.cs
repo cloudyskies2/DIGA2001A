@@ -63,6 +63,12 @@ public class FPController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
+    
+
+
+
+
     private void Update()
     {
         HandleMovement();
@@ -252,6 +258,7 @@ public class FPController : MonoBehaviour
 
         heldObject.Throw(impulse);
         heldObject = null;
+
     }
 
     public void OnInteract(InputAction.CallbackContext context)

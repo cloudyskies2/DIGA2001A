@@ -2,7 +2,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.ProBuilder.MeshOperations;
 
-public class DoorInteraction : MonoBehaviour 
+
+//Title: Open Door with Key Press C# in Unity 3D. Survival Game Lesson5
+//Author: DIGA Hub
+//Availability: https://www.youtube.com/watch?v=90vVwpNFppw&t=330s
+
+public class DoorInteraction : MonoBehaviour
 {
 
     public Animator animator;
@@ -12,15 +17,17 @@ public class DoorInteraction : MonoBehaviour
     private bool isPlayerInRange = false;
     private bool isDoorOpen = false;
 
-     void Start()
+    void Start()
     {
+
+
         if (interactionPrompt != null)
         {
             interactionPrompt.gameObject.SetActive(false);
         }
     }
 
-     void Update()
+    void Update()
     {
         if (isPlayerInRange)
         {
@@ -52,7 +59,8 @@ public class DoorInteraction : MonoBehaviour
 
                 isDoorOpen = !isDoorOpen;
             }
-        }else
+        }
+        else
         {
 
             if (interactionPrompt != null)
@@ -65,7 +73,7 @@ public class DoorInteraction : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             isPlayerInRange = true;
         }
@@ -73,10 +81,10 @@ public class DoorInteraction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             isPlayerInRange = false;
-            
+
         }
     }
 }
