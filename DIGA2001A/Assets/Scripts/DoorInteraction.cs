@@ -7,18 +7,16 @@ public class DoorInteraction : MonoBehaviour
 
     public Animator animator;
     public KeyCode interactKey = KeyCode.E;
-    public TextMeshProUGUI interactionPrompt;
+    public TextMeshProUGUI InteractionPrompt;
 
     private bool isPlayerInRange = false;
     private bool isDoorOpen = false;
 
      void Start()
     {
-
-
-        if (interactionPrompt != null)
+        if (InteractionPrompt != null)
         {
-            interactionPrompt.gameObject.SetActive(false);
+            InteractionPrompt.gameObject.SetActive(false);
         }
     }
 
@@ -27,10 +25,10 @@ public class DoorInteraction : MonoBehaviour
         if (isPlayerInRange)
         {
 
-            if (interactionPrompt != null)
+            if (InteractionPrompt != null)
             {
-                interactionPrompt.text = isDoorOpen ? "Press E to Close Door" : "Press E to Open Door";
-                interactionPrompt.gameObject.SetActive(true);
+                InteractionPrompt.text = isDoorOpen ? "Press E to Close Door" : "Press E to Open Door";
+                InteractionPrompt.gameObject.SetActive(true);
 
 
             }
@@ -57,9 +55,9 @@ public class DoorInteraction : MonoBehaviour
         }else
         {
 
-            if (interactionPrompt != null)
+            if (InteractionPrompt != null)
             {
-                interactionPrompt.gameObject.SetActive(false);
+                InteractionPrompt.gameObject.SetActive(false);
             }
         }
     }
