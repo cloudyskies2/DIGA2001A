@@ -2,33 +2,40 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.ProBuilder.MeshOperations;
 
-public class DoorInteraction : MonoBehaviour 
+
+//Title: Open Door with Key Press C# in Unity 3D. Survival Game Lesson5
+//Author: DIGA Hub
+//Availability: https://www.youtube.com/watch?v=90vVwpNFppw&t=330s
+
+public class DoorInteraction : MonoBehaviour
 {
 
     public Animator animator;
     public KeyCode interactKey = KeyCode.E;
-    public TextMeshProUGUI InteractionPrompt;
+    public TextMeshProUGUI interactionPrompt;
 
     private bool isPlayerInRange = false;
     private bool isDoorOpen = false;
 
-     void Start()
+    void Start()
     {
-        if (InteractionPrompt != null)
+
+
+        if (interactionPrompt != null)
         {
-            InteractionPrompt.gameObject.SetActive(false);
+            interactionPrompt.gameObject.SetActive(false);
         }
     }
 
-     void Update()
+    void Update()
     {
         if (isPlayerInRange)
         {
 
-            if (InteractionPrompt != null)
+            if (interactionPrompt != null)
             {
-                InteractionPrompt.text = isDoorOpen ? "Press E to Close Door" : "Press E to Open Door";
-                InteractionPrompt.gameObject.SetActive(true);
+                interactionPrompt.text = isDoorOpen ? "Press E to Close Door" : "Press E to Open Door";
+                interactionPrompt.gameObject.SetActive(true);
 
 
             }
@@ -52,12 +59,13 @@ public class DoorInteraction : MonoBehaviour
 
                 isDoorOpen = !isDoorOpen;
             }
-        }else
+        }
+        else
         {
 
-            if (InteractionPrompt != null)
+            if (interactionPrompt != null)
             {
-                InteractionPrompt.gameObject.SetActive(false);
+                interactionPrompt.gameObject.SetActive(false);
             }
         }
     }
@@ -65,7 +73,7 @@ public class DoorInteraction : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             isPlayerInRange = true;
         }
@@ -73,10 +81,10 @@ public class DoorInteraction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             isPlayerInRange = false;
-            
+
         }
     }
 }
