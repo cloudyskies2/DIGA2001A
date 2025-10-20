@@ -427,8 +427,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameTransform: {fileID: 328325602}
   piecePrefab: {fileID: 2416049622017328896, guid: d16035c422ccb0047a5d6634633f365e, type: 3}
-  interactionPrompt: {fileID: 0}
   completionMessage: {fileID: 1196937876}
+  sceneTransition: {fileID: 2191511660303591309, guid: cfc0d1bbe6753f14eb2fc6686635c517, type: 3}
+  transitionTime: 0.5
 --- !u!1 &774950037
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,7 +467,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.3735848, g: 0.16925251, b: 0.13745096, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

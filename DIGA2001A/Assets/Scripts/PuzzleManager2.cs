@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 /// Code version: Unity 2021.3.6f1
 /// Availabiliy:https://www.youtube.com/watch?v=IgBjJ-bexeo
 /// 
+
 public class PuzzleManager2 : MonoBehaviour
 {
     [SerializeField] private Transform gameTransform;
@@ -21,8 +22,10 @@ public class PuzzleManager2 : MonoBehaviour
     private int size;
     private bool shuffling = false;
 
-    //public TextMeshProUGUI interactionPrompt;
     public TextMeshProUGUI completionMessage;
+
+    //public Animator sceneTransition;
+    //public float transitionTime;
 
 
     //Create the game setup with size x size pieces.
@@ -80,6 +83,15 @@ public class PuzzleManager2 : MonoBehaviour
 
     }
 
+    /*IEnumerator LoadLevel(int levelIndex)
+    {
+        sceneTransition.SetTrigger("Start");
+
+        SceneManager.LoadScene(levelIndex);
+
+        yield return new WaitForSeconds(1);
+    }*/
+
     void Update()
     {
         //Check for completion
@@ -109,6 +121,7 @@ public class PuzzleManager2 : MonoBehaviour
         {
             SceneManager.LoadScene(3);
             //DontDestroyOnLoad(this.gameObject);
+            //LoadNextLevel();
         }
 
 
@@ -131,6 +144,11 @@ public class PuzzleManager2 : MonoBehaviour
             }
         }
     }
+
+    /*public void LoadNextLevel()
+    {
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    }*/
 
     private bool SwapIfValid(int i, int offset, int colCheck)
     {

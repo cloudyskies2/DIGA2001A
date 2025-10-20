@@ -2,6 +2,7 @@ using System.Net;
 using System.Threading;
 using UnityEngine;
 
+
 public class PickUpObject : MonoBehaviour
 {
     private Rigidbody rb;
