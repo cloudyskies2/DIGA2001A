@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.ProBuilder.MeshOperations;
+using UnityEngine.SceneManagement;
 
 public class PuzzleInteraction : MonoBehaviour
 {
@@ -29,6 +30,10 @@ public class PuzzleInteraction : MonoBehaviour
                 interactionPrompt.gameObject.SetActive(true);
             }
 
+            if(Input.GetKeyDown(KeyCode.Q))
+            {
+                SceneManager.LoadScene(2);
+            }
         }
         else
         {

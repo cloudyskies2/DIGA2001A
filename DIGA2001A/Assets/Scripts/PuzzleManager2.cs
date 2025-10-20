@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class PuzzleManager : MonoBehaviour
+public class PuzzleManager2 : MonoBehaviour
 {
     [SerializeField] private Transform gameTransform;
     [SerializeField] private Transform piecePrefab;
@@ -16,7 +16,7 @@ public class PuzzleManager : MonoBehaviour
     private bool shuffling = false;
 
     //public TextMeshProUGUI interactionPrompt;
-    //public TextMeshProUGUI completionMessage;
+    public TextMeshProUGUI completionMessage;
 
 
     //Create the game setup with size x size pieces.
@@ -70,30 +70,41 @@ public class PuzzleManager : MonoBehaviour
         size = 3;
         CreateGamePieces(0.01f);
         StartCoroutine(WaitShuffle(01f));
+        completionMessage.gameObject.SetActive(false);
+
     }
 
-    void Update ()
+    void Update()
     {
         //Check for completion
         if (!shuffling && CheckCompletion())
         {
             shuffling = true;
-            //StartCoroutine(WaitShuffle(01f));
+            //StartCoroutine(WaitShuffle(01f));          
+        }
 
-            //completionMessage.gameObject.SetActive(true);
+        if(CheckCompletion() == true)
+        {
+            completionMessage.gameObject.SetActive(true);
+        }
+        
+        else if (CheckCompletion() == false)
+        {
+            completionMessage.gameObject.SetActive(false);
         }
 
         /*if (Input.GetKeyDown(KeyCode.N))
         {
             completionMessage.gameObject.SetActive(false);
             interactionPrompt.gameObject.SetActive(true);
-        }
+        }*/
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            SceneManager.LoadScene(1);
-            DontDestroyOnLoad(this.gameObject);
-        }*/
+            SceneManager.LoadScene(3);
+            //DontDestroyOnLoad(this.gameObject);
+        }
+
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -158,7 +169,7 @@ public class PuzzleManager : MonoBehaviour
         int count = 0;
         int last = 0;
 
-        while(count < (size * size * size))
+        while (count < (size * size * size))
         {
             //Pick a random location
             int random = Random.Range(0, size * size);
@@ -187,5 +198,3 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 }
-
-
