@@ -1,29 +1,24 @@
+
 using UnityEngine;
 using TMPro;
-using UnityEngine.ProBuilder.MeshOperations;
-
-
-//Title: Open Door with Key Press C# in Unity 3D. Survival Game Lesson5
-//Author: DIGA Hub
-//Availability: https://www.youtube.com/watch?v=90vVwpNFppw&t=330s
 
 public class DoorInteraction : MonoBehaviour
 {
-
     public Animator animator;
     public KeyCode interactKey = KeyCode.E;
-    public TextMeshProUGUI interactionPrompt;
+
+    [Header("UI Elements")]
+    public GameObject doorPromptUI; // The Panel UI
+    public TextMeshProUGUI doorPromptText; // The text inside the panel
 
     private bool isPlayerInRange = false;
     private bool isDoorOpen = false;
 
     void Start()
     {
-
-
-        if (interactionPrompt != null)
+        if (doorPromptUI != null)
         {
-            interactionPrompt.gameObject.SetActive(false);
+            doorPromptUI.SetActive(false); // Ensure UI starts hidden
         }
     }
 
@@ -31,60 +26,46 @@ public class DoorInteraction : MonoBehaviour
     {
         if (isPlayerInRange)
         {
-
-            if (interactionPrompt != null)
+            // Update text depending on door state
+            if (doorPromptText != null)
             {
-                interactionPrompt.text = isDoorOpen ? "Press E to Close Door" : "Press E to Open Door";
-                interactionPrompt.gameObject.SetActive(true);
-
-
+                doorPromptText.text = isDoorOpen ? "Press E to Close Door" : "Press E to Open Door";
             }
 
+            if (doorPromptUI != null && !doorPromptUI.activeSelf)
+            {
+                doorPromptUI.SetActive(true);
+            }
+
+            // Interact
             if (Input.GetKeyDown(interactKey))
             {
                 if (!isDoorOpen)
-                {
-
                     animator.SetTrigger("OpenDoor");
-
-
-                }
                 else
-                {
                     animator.SetTrigger("CloseDoor");
-
-
-
-                }
 
                 isDoorOpen = !isDoorOpen;
             }
         }
         else
         {
-
-            if (interactionPrompt != null)
+            if (doorPromptUI != null && doorPromptUI.activeSelf)
             {
-                interactionPrompt.gameObject.SetActive(false);
+                doorPromptUI.SetActive(false);
             }
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-
         if (other.CompareTag("Player"))
-        {
             isPlayerInRange = true;
-        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
             isPlayerInRange = false;
-
-        }
     }
 }
