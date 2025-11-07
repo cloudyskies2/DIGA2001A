@@ -28,6 +28,9 @@ public class FPController : MonoBehaviour
     private Vector3 velocity;
     private float verticalRotation = 0f;
 
+    [Header("Animation")]
+    private Animator animator;
+
     //[Header("Shooting")]
     //public GameObject bulletPrefab;
     //public Transform gunPoint;
@@ -62,6 +65,9 @@ public class FPController : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        animator = GetComponentInChildren<Animator>();
+
     }
 
     
@@ -78,6 +84,15 @@ public class FPController : MonoBehaviour
         {
             heldObject.MoveToHeldPoint(heldPoint.position);
         }
+
+
+        float speed = new Vector2(moveInput.x, moveInput.y).magnitude;
+        if (animator != null)
+        {
+            animator.SetFloat("Speed", speed);
+        }
+
+
     }
     public void OnMovement(InputAction.CallbackContext context)
     {
