@@ -8,8 +8,8 @@ public class DoorInteraction : MonoBehaviour
     public KeyCode interactKey = KeyCode.E;
 
     [Header("UI Elements")]
-    public GameObject doorPromptUI; // The Panel UI
-    public TextMeshProUGUI doorPromptText; // The text inside the panel
+    public GameObject doorPromptUI; 
+    public TextMeshProUGUI doorPromptText; 
 
     private bool isPlayerInRange = false;
     private bool isDoorOpen = false;
@@ -18,7 +18,7 @@ public class DoorInteraction : MonoBehaviour
     {
         if (doorPromptUI != null)
         {
-            doorPromptUI.SetActive(false); // Ensure UI starts hidden
+            doorPromptUI.SetActive(false); 
         }
     }
 
@@ -26,7 +26,7 @@ public class DoorInteraction : MonoBehaviour
     {
         if (isPlayerInRange)
         {
-            // Update text depending on door state
+            
             if (doorPromptText != null)
             {
                 doorPromptText.text = isDoorOpen ? "Press E to Close Door" : "Press E to Open Door";
@@ -37,7 +37,7 @@ public class DoorInteraction : MonoBehaviour
                 doorPromptUI.SetActive(true);
             }
 
-            // Interact
+            
             if (Input.GetKeyDown(interactKey))
             {
                 if (!isDoorOpen)

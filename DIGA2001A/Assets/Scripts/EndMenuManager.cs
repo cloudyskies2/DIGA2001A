@@ -8,13 +8,13 @@ public class EndMenuManager : MonoBehaviour
 {
     public void RestartGame()
     {
-        // Reload the current active scene
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void GoToMainMenu()
     {
-        // Load the main menu scene (replace with your actual scene name)
+        
         SceneManager.LoadScene("MainMenu");
     }
 

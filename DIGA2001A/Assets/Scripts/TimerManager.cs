@@ -10,12 +10,12 @@ using UnityEditor;
 public class TimerManager : MonoBehaviour
 {
     [Header("Timer Settings")]
-    public float timeLimit = 60f; // 1 minute
+    public float timeLimit = 60f; 
     private float currentTime;
 
     [Header("UI References")]
-    public TMP_Text timerText;        // Assign your UI Text here
-    public GameObject endMenuUI;  // Assign the End Menu Canvas here
+    public TMP_Text timerText;        
+    public GameObject endMenuUI;  
 
     private bool timerRunning = true;
     private bool goalReached = false;
