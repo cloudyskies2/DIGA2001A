@@ -117,7 +117,7 @@ public class FPController : MonoBehaviour
         if(numOfJumps == 0) StartCoroutine(WaitForLanding());
 
         numOfJumps++;
-        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        velocity.y = Mathf.Sqrt(jumpHeight * -3.3f * gravity);
     }
 
     private bool IsGrounded() => controller.isGrounded;

@@ -46,15 +46,10 @@ public class DoorInteraction : MonoBehaviour
                 {
 
                     animator.SetTrigger("OpenDoor");
-
-
                 }
                 else
                 {
                     animator.SetTrigger("CloseDoor");
-
-
-
                 }
 
                 isDoorOpen = !isDoorOpen;

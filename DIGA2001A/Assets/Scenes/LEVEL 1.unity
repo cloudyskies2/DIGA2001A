@@ -15369,8 +15369,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactKey: 113
   interactionPrompt: {fileID: 1913050185}
-  sceneTransition: {fileID: 5347488128551552847}
-  transitionTime: 0.5
 --- !u!65 &1291524628
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19115,6 +19113,7 @@ MonoBehaviour:
   gravity: -9.81
   jumpHeight: 1.5
   jumpForce: 9
+  doubleJumpForce: 8
   numOfJumps: 0
   maxNumOfJumps: 2
   cameraTransform: {fileID: 439851809}

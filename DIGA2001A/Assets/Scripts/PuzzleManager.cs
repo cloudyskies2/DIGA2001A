@@ -93,11 +93,12 @@ public class PuzzleManager : MonoBehaviour
         {
             completionMessage.gameObject.SetActive(false);
             interactionPrompt.gameObject.SetActive(true);
-        }
+        }*/
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        /*if (Input.GetKeyDown(KeyCode.Q) && CheckCompletion() == true)
         {
-            SceneManager.LoadScene(1);
+            //completionMessage.gameObject.SetActive(false);
+            SceneManager.LoadScene(3);
             DontDestroyOnLoad(this.gameObject);
         }*/
 

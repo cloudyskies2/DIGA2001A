@@ -43,7 +43,8 @@ public class PuzzleInteraction : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                LoadNextLevel(); 
+                //LoadNextLevel(); 
+                SceneManager.LoadScene(2);
             }
         }
         else
@@ -64,10 +65,10 @@ public class PuzzleInteraction : MonoBehaviour
         yield return new WaitForSeconds(1);
     }
 
-    public void LoadNextLevel()
-    {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
-    }
+    //public void LoadNextLevel()
+    //{
+       //StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    //}
 
     void OnTriggerEnter(Collider other)
     {
@@ -84,7 +85,6 @@ public class PuzzleInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = false;
-
         }
     }
 }
