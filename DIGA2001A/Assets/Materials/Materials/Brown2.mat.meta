@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:DIGA2001A/Assets/Materials/Materials/Brown2.mat.meta
 guid: 8b3fc99b72ce7f24abb72f2dc9d53bc9
+========
+guid: f8d6a8843c224104f9b6164c6d183a1e
+>>>>>>>> Keratile2:DIGA2001A/Assets/Terrain/Terrain_FinalRoom.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0
