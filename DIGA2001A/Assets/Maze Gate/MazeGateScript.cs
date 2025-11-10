@@ -27,7 +27,7 @@ public class MazeGate : MonoBehaviour
             
             if (interactionPrompt != null)
             {
-                interactionPrompt.text = "Press E to Open Door";
+                interactionPrompt.text = "Press E to Open Gate";
                 interactionPrompt.gameObject.SetActive(true);
             }
 
