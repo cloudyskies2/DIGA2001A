@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+
+
+
+
 public class FPController : MonoBehaviour
 {
     [Header("Movement Settings")]

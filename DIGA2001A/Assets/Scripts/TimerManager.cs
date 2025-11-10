@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 #endif
 
+
+
+
 public class TimerManager : MonoBehaviour
 {
     [Header("Timer Settings")]

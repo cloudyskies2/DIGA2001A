@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
+
+
 public class LetterReader : MonoBehaviour
 {
     public KeyCode readKey = KeyCode.R;

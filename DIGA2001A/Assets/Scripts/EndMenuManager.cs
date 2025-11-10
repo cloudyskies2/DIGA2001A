@@ -4,6 +4,13 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 #endif
 
+
+/// Title: WINNING LEVELS - How to make a Video Game in Unity (E09)
+/// Date: 26 Mar 2017
+/// Availabiliy: https://youtu.be/Iv7A8TzreY4?si=vQ3utD-d0jANLClA
+
+
+
 public class EndMenuManager : MonoBehaviour
 {
     public void RestartGame()
