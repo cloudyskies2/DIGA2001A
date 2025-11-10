@@ -11,10 +11,10 @@ public class FPController : MonoBehaviour
 
     [Header("Jump Settings")]
     public float jumpHeight = 16f;
-    //public bool doubleJump;
+    public bool doubleJump = false;
     public float jumpForce = 9f;
-    //public float doubleJumpForce = 8f;
-    //private Rigidbody rb;
+    public float doubleJumpForce = 8f;
+    private Rigidbody rb;
     public float numOfJumps;
     public float maxNumOfJumps = 2f;
 
@@ -91,21 +91,24 @@ public class FPController : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         if (context.performed && !IsGrounded()) return;
+        //if (!context.started) return;
         if (!IsGrounded() && numOfJumps >= maxNumOfJumps) return;
 
-        //if (context.performed && IsGrounded())
-        //{
+        if (context.performed && IsGrounded())
+        {
             if (numOfJumps == 0) StartCoroutine(routine:WaitForLanding());
 
             numOfJumps++;
             velocity.y = Mathf.Sqrt(jumpHeight * -5f * gravity);
 
             //HandleJump(jumpForce);
-        //}
+
+            //doubleJump = true;
+        }
 
         /*else if(context.performed && !controller.isGrounded && doubleJump)
         {
-            HandleJump(doubleJumpForce);
+            //HandleJump(doubleJumpForce);
             doubleJump = false;
         }*/
 
