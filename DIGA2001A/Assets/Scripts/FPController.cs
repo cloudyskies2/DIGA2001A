@@ -110,15 +110,15 @@ public class FPController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && !IsGrounded()) return;
-        if (!IsGrounded() && numOfJumps >= maxNumOfJumps) return;
+        //if (context.performed && !IsGrounded()) return;
+        //if (!IsGrounded() && numOfJumps >= maxNumOfJumps) return;
 
         //if (context.performed && IsGrounded())
         //{
-            if (numOfJumps == 0) StartCoroutine(routine:WaitForLanding());
+            //if (numOfJumps == 0) StartCoroutine(routine:WaitForLanding());
 
-            numOfJumps++;
-            velocity.y = Mathf.Sqrt(jumpHeight * -5f * gravity);
+            //numOfJumps++;
+            //velocity.y = Mathf.Sqrt(jumpHeight * -3.4f * gravity);
 
             //HandleJump(jumpForce);
         //}
@@ -129,12 +129,12 @@ public class FPController : MonoBehaviour
             doubleJump = false;
         }*/
 
-        //if (!context.performed) return;
-        //if (!IsGrounded() && numOfJumps >= maxNumOfJumps) return;
-        //if(numOfJumps == 0) StartCoroutine(WaitForLanding());
+        if (!context.performed) return;
+        if (!IsGrounded() && numOfJumps >= maxNumOfJumps) return;
+        if(numOfJumps == 0) StartCoroutine(WaitForLanding());
 
-        //numOfJumps++;
-        //velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        numOfJumps++;
+        velocity.y = Mathf.Sqrt(jumpHeight * -3.4f * gravity);
     }
 
     private bool IsGrounded() => controller.isGrounded;

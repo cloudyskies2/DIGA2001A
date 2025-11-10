@@ -78,7 +78,8 @@ public class PuzzleManager2 : MonoBehaviour
         pieces = new List<Transform>();
         size = 3;
         CreateGamePieces(0.01f);
-        StartCoroutine(WaitShuffle(01f));
+        //StartCoroutine(WaitShuffle(01f));
+        RandomShuffle();
         completionMessage.gameObject.SetActive(false);
 
     }
@@ -117,7 +118,7 @@ public class PuzzleManager2 : MonoBehaviour
             interactionPrompt.gameObject.SetActive(true);
         }*/
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && CheckCompletion() == true)
         {
             SceneManager.LoadScene(3);
             //DontDestroyOnLoad(this.gameObject);
@@ -180,9 +181,9 @@ public class PuzzleManager2 : MonoBehaviour
         return true;
     }
 
-    private IEnumerator WaitShuffle(float duration)
+    private void RandomShuffle()
     {
-        yield return new WaitForSeconds(duration);
+        //yield return new WaitForSeconds(duration);
         Shuffle();
         shuffling = false;
     }
