@@ -19,8 +19,8 @@ public class PuzzleInteraction : MonoBehaviour
     private bool isPlayerInRange = false;
     private bool isPuzzleActivated = false;
 
-    public Animator sceneTransition;
-    public float transitionTime;
+    //public Animator sceneTransition;
+    //public float transitionTime;
 
     void Start()
     {
@@ -48,7 +48,6 @@ public class PuzzleInteraction : MonoBehaviour
         }
         else
         {
-
             if (interactionPrompt != null)
             {
                 interactionPrompt.gameObject.SetActive(false);
@@ -58,7 +57,7 @@ public class PuzzleInteraction : MonoBehaviour
 
     IEnumerator LoadLevel(int levelIndex)
     {
-        sceneTransition.SetTrigger("Start");
+        //sceneTransition.SetTrigger("Start");
 
         SceneManager.LoadScene(levelIndex);
 

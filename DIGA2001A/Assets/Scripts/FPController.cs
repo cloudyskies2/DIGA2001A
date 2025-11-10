@@ -14,7 +14,7 @@ public class FPController : MonoBehaviour
     //public bool doubleJump = false;
     public float jumpForce = 9f;
     public float doubleJumpForce = 8f;
-    private Rigidbody rb;
+    //private Rigidbody rb;
     public float numOfJumps;
     public float maxNumOfJumps = 2f;
 
@@ -92,7 +92,7 @@ public class FPController : MonoBehaviour
     {
         //if (!context.started) return;
 
-        if (context.performed && IsGrounded())
+        /*if (context.performed && IsGrounded())
         {
             if (context.performed && !IsGrounded()) return;
             if (!IsGrounded() && numOfJumps >= maxNumOfJumps) return;
@@ -104,7 +104,7 @@ public class FPController : MonoBehaviour
             //HandleJump(jumpForce);
 
             //doubleJump = true;
-        }
+        }*/
 
         /*else if(context.performed && !controller.isGrounded && doubleJump)
         {
@@ -112,12 +112,12 @@ public class FPController : MonoBehaviour
             doubleJump = false;
         }*/
 
-        //if (!context.performed) return;
-        //if (!IsGrounded() && numOfJumps >= maxNumOfJumps) return;
-        //if(numOfJumps == 0) StartCoroutine(WaitForLanding());
+        if (!context.performed) return;
+        if (!IsGrounded() && numOfJumps >= maxNumOfJumps) return;
+        if(numOfJumps == 0) StartCoroutine(WaitForLanding());
 
-        //numOfJumps++;
-        //velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        numOfJumps++;
+        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
     }
 
     private bool IsGrounded() => controller.isGrounded;
