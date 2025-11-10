@@ -11,7 +11,7 @@ public class FPController : MonoBehaviour
 
     [Header("Jump Settings")]
     public float jumpHeight = 16f;
-    public bool doubleJump = false;
+    //public bool doubleJump = false;
     public float jumpForce = 9f;
     public float doubleJumpForce = 8f;
     private Rigidbody rb;
@@ -90,12 +90,12 @@ public class FPController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && !IsGrounded()) return;
         //if (!context.started) return;
-        if (!IsGrounded() && numOfJumps >= maxNumOfJumps) return;
 
         if (context.performed && IsGrounded())
         {
+            if (context.performed && !IsGrounded()) return;
+            if (!IsGrounded() && numOfJumps >= maxNumOfJumps) return;
             if (numOfJumps == 0) StartCoroutine(routine:WaitForLanding());
 
             numOfJumps++;
